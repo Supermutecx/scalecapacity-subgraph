@@ -1,0 +1,16 @@
+{
+  "name": "ScaleCapacity",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ murano1996/ScaleCapacity",
+    "create-local": "graph create --node http://localhost:8020/ murano1996/ScaleCapacity",
+    "remove-local": "graph remove --node http://localhost:8020/ murano1996/ScaleCapacity",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 murano1996/ScaleCapacity"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.25.1",
+    "@graphprotocol/graph-ts": "0.24.1"
+  }
+}
