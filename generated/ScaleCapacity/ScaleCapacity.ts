@@ -730,6 +730,10 @@ export class MintCall__Inputs {
   get url(): string {
     return this._call.inputValues[2].value.toString();
   }
+
+  get price(): BigInt {
+    return this._call.inputValues[3].value.toBigInt();
+  }
 }
 
 export class MintCall__Outputs {
@@ -768,6 +772,10 @@ export class MintBatchCall__Inputs {
   get url(): Array<string> {
     return this._call.inputValues[2].value.toStringArray();
   }
+
+  get price(): Array<BigInt> {
+    return this._call.inputValues[3].value.toBigIntArray();
+  }
 }
 
 export class MintBatchCall__Outputs {
@@ -800,6 +808,40 @@ export class PauseCall__Outputs {
   _call: PauseCall;
 
   constructor(call: PauseCall) {
+    this._call = call;
+  }
+}
+
+export class PurchaseCall extends ethereum.Call {
+  get inputs(): PurchaseCall__Inputs {
+    return new PurchaseCall__Inputs(this);
+  }
+
+  get outputs(): PurchaseCall__Outputs {
+    return new PurchaseCall__Outputs(this);
+  }
+}
+
+export class PurchaseCall__Inputs {
+  _call: PurchaseCall;
+
+  constructor(call: PurchaseCall) {
+    this._call = call;
+  }
+
+  get tokenID(): BigInt {
+    return this._call.inputValues[0].value.toBigInt();
+  }
+
+  get amount(): BigInt {
+    return this._call.inputValues[1].value.toBigInt();
+  }
+}
+
+export class PurchaseCall__Outputs {
+  _call: PurchaseCall;
+
+  constructor(call: PurchaseCall) {
     this._call = call;
   }
 }

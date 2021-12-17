@@ -6,7 +6,7 @@ dataSources:
     name: ScaleCapacity
     network: mumbai
     source:
-      address: "0x3642333056477C4AB95dDb30b16ce05175e5B29c"
+      address: "0x67EFd297239fd2f1Ae7fC115b556d8F86F12Db1D"
       abi: ScaleCapacity
     mapping:
       kind: ethereum/events
