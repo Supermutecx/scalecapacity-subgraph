@@ -1,6 +1,6 @@
 specVersion: 0.0.2
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 dataSources:
   - kind: ethereum
     name: ScaleCapacity
@@ -16,8 +16,8 @@ dataSources:
         - MintBatchEvent
       abis:
         - name: ScaleCapacity
-          file: ./abis/ScaleCapacity.json
+          file: ScaleCapacity/abis/ScaleCapacity.json
       eventHandlers:
         - event: MintBatchEvent(address,uint256[])
           handler: handleBatchMint
-      file: ./src/mapping.ts
+      file: ScaleCapacity/ScaleCapacity.wasm
