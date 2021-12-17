@@ -1,5 +1,5 @@
 type ScaleCapacityEntity @entity {
   id: ID!
-  tokenIDs: [BigInt!]
-  urls: [String!]
+  tokenID: BigInt!
+  address: String!
 }

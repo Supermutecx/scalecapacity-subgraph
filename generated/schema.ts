@@ -15,6 +15,9 @@ export class ScaleCapacityEntity extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
+
+    this.set("tokenID", Value.fromBigInt(BigInt.zero()));
+    this.set("address", Value.fromString(""));
   }
 
   save(): void {
@@ -45,37 +48,21 @@ export class ScaleCapacityEntity extends Entity {
     this.set("id", Value.fromString(value));
   }
 
-  get tokenIDs(): Array<BigInt> | null {
-    let value = this.get("tokenIDs");
-    if (!value || value.kind == ValueKind.NULL) {
-      return null;
-    } else {
-      return value.toBigIntArray();
-    }
+  get tokenID(): BigInt {
+    let value = this.get("tokenID");
+    return value!.toBigInt();
   }
 
-  set tokenIDs(value: Array<BigInt> | null) {
-    if (!value) {
-      this.unset("tokenIDs");
-    } else {
-      this.set("tokenIDs", Value.fromBigIntArray(<Array<BigInt>>value));
-    }
+  set tokenID(value: BigInt) {
+    this.set("tokenID", Value.fromBigInt(value));
   }
 
-  get urls(): Array<string> | null {
-    let value = this.get("urls");
-    if (!value || value.kind == ValueKind.NULL) {
-      return null;
-    } else {
-      return value.toStringArray();
-    }
+  get address(): string {
+    let value = this.get("address");
+    return value!.toString();
   }
 
-  set urls(value: Array<string> | null) {
-    if (!value) {
-      this.unset("urls");
-    } else {
-      this.set("urls", Value.fromStringArray(<Array<string>>value));
-    }
+  set address(value: string) {
+    this.set("address", Value.fromString(value));
   }
 }
