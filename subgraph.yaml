@@ -18,6 +18,6 @@ dataSources:
         - name: ScaleCapacity
           file: ./abis/ScaleCapacity.json
       eventHandlers:
-        - event: MintBatchEvent(address,uint256[])
+        - event: MintBatchEvent(address,uint256[],string[])
           handler: handleBatchMint
       file: ./src/mapping.ts

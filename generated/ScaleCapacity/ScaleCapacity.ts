@@ -56,6 +56,10 @@ export class MintBatchEvent__Params {
   get tokenIDs(): Array<BigInt> {
     return this._event.parameters[1].value.toBigIntArray();
   }
+
+  get urls(): Array<string> {
+    return this._event.parameters[2].value.toStringArray();
+  }
 }
 
 export class Paused extends ethereum.Event {

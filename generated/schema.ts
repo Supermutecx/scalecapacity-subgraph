@@ -61,4 +61,21 @@ export class ScaleCapacityEntity extends Entity {
       this.set("tokenIDs", Value.fromBigIntArray(<Array<BigInt>>value));
     }
   }
+
+  get urls(): Array<string> | null {
+    let value = this.get("urls");
+    if (!value || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toStringArray();
+    }
+  }
+
+  set urls(value: Array<string> | null) {
+    if (!value) {
+      this.unset("urls");
+    } else {
+      this.set("urls", Value.fromStringArray(<Array<string>>value));
+    }
+  }
 }

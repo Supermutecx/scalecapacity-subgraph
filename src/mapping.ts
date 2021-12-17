@@ -21,6 +21,7 @@ export function handleBatchMint(event: MintBatchEvent): void {
     tokenID.push(event.params.tokenIDs[i]);
   }
   entity.tokenIDs = tokenID;
+  entity.urls = event.params.urls;
   // Entities can be written to the store with `.save()`
   entity.save()
 }
